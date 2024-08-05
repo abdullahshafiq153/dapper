@@ -1,9 +1,12 @@
 import React from 'react'
+import { useRouter } from 'next/router'
+const Slug = () => {
+    const router=useRouter();
+    const {slug} =router.query;
 
-const [slug] = () => {
   return (
-    <div>[slug]</div>
+    <div>Slug: {slug}</div>
   )
 }
 
-export default [slug]
+export default Slug
