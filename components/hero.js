@@ -3,9 +3,44 @@ import React from 'react'
 const Hero = () => {
   return (
     <section className="text-gray-600 body-font">
-  <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+  <div className="container mx-auto flex px-5 py-2 md:flex-row flex-col items-center">
     <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-      <img className="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600"/>
+     {/* Left Gallery Section */}
+     
+
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <div class="grid gap-4">
+    <div class="flex flex-col justify-end ">
+            <img class="object-cover w-full h-auto rounded-lg" src="/jeans.jpg" alt="Jeans" />
+        </div>
+        <div>
+            <img class="object-cover  h-auto max-w-full rounded-lg" src="/tshirts.jpg" alt=""/>
+        </div>
+    </div>
+    <div class="grid gap-4">
+        <div class="flex flex-col  h-[7rem] md:h-27">
+            <img class="object-cover h-full w-full rounded-lg" src="/shorts.jpg" alt=""/>
+        </div>
+        <div class="flex flex-col  h-26 ">
+            <img class="object-cover h-full w-full rounded-lg" src="/hoodies.jpg" alt=""/>
+        </div>
+        <div class="flex flex-col  h-[7rem] md:h-27">
+            <img class="object-cover h-full w-full rounded-lg" src="/jackets.jpg" alt=""/>
+        </div>
+    </div>
+    <div class="hidden md:grid gap-4">
+        <div class="flex flex-col justify-end" >
+            <img class="object-cover  h-auto max-w-full rounded-lg" src="/pants.jpg" alt=""/>
+        </div>
+        
+        <div>
+            <img class="object-cover  h-auto max-w-full rounded-lg" src="/sweaters.jpg" alt=""/>
+        </div>
+    </div>
+    
+</div>
+
+
     </div>
     <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
       <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Before they sold out
