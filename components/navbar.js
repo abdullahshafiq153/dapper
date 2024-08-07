@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Head from "next/head";
 import { IoCartOutline } from "react-icons/io5";
 import { FiMenu, FiX } from "react-icons/fi";
 import Link from "next/link";
@@ -13,16 +12,6 @@ const Navbar = () => {
 
   return (
     <>
-      <Head>
-        <title>Dapper - Modern Men's Fashion</title>
-        <meta
-          name="description"
-          content="Dapper is your go-to store for modern men's fashion. Explore our collection of stylish clothing."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/logo.svg" />
-      </Head>
-
       <header className="text-gray-600 body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
           <div className="flex items-center justify-between w-full md:w-auto mb-4 md:mb-0">
