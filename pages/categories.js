@@ -16,6 +16,7 @@ const Categories = () => {
             </p>
           </div>
         </div>
+
         <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
           <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
             <div className="rounded-lg h-120 overflow-hidden">
@@ -23,7 +24,7 @@ const Categories = () => {
             </div>
             <h2 className="text-xl font-medium title-font text-gray-900 mt-5">Hoodies</h2>
             <p className="text-base leading-relaxed mt-2">Stay cozy and on-trend with our range of premium hoodies. Perfect for every casual occasion.</p>
-            <Link href="/hoodies" legacyBehavior><a className="text-yellow-500 inline-flex items-center mt-3">Shop Now
+            <Link href="/categories/hoodies" legacyBehavior><a className="text-yellow-500 inline-flex items-center mt-3">Shop Now
               <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
@@ -35,7 +36,7 @@ const Categories = () => {
             </div>
             <h2 className="text-xl font-medium title-font text-gray-900 mt-5">Jackets</h2>
             <p className="text-base leading-relaxed mt-2">Find the perfect jacket for any season. Trendy, functional, and essential for every wardrobe.</p>
-            <Link href="/jackets" legacyBehavior><a className="text-yellow-500 inline-flex items-center mt-3" >Shop Now
+            <Link href="/categories/jackets" legacyBehavior><a className="text-yellow-500 inline-flex items-center mt-3" >Shop Now
               <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
@@ -47,7 +48,7 @@ const Categories = () => {
             </div>
             <h2 className="text-xl font-medium title-font text-gray-900 mt-5">Jeans</h2>
             <p className="text-base leading-relaxed mt-2">Discover our versatile range of jeans for every style. Comfortable and stylish for everyday wear.</p>
-            <Link href="/jeans" legacyBehavior><a className="text-yellow-500 inline-flex items-center mt-3" >Shop Now
+            <Link href="/categories/jeans" legacyBehavior><a className="text-yellow-500 inline-flex items-center mt-3" >Shop Now
               <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
@@ -59,7 +60,7 @@ const Categories = () => {
             </div>
             <h2 className="text-xl font-medium title-font text-gray-900 mt-5">Pants</h2>
             <p className="text-base leading-relaxed mt-2">Versatile and stylish pants for any occasion. Elevate your look with our curated selection.</p>
-            <Link href="/pants"legacyBehavior><a className="text-yellow-500 inline-flex items-center mt-3" >Shop Now
+            <Link href="/categories/pants"legacyBehavior><a className="text-yellow-500 inline-flex items-center mt-3" >Shop Now
               <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
@@ -71,7 +72,7 @@ const Categories = () => {
             </div>
             <h2 className="text-xl font-medium title-font text-gray-900 mt-5">Shorts</h2>
             <p className="text-base leading-relaxed mt-2">Beat the heat with our stylish shorts. Ideal for warm weather and casual outings.</p>
-            <Link href="/shorts" legacyBehavior><a className="text-yellow-500 inline-flex items-center mt-3" >Shop Now
+            <Link href="/categories/shorts" legacyBehavior><a className="text-yellow-500 inline-flex items-center mt-3" >Shop Now
               <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
@@ -83,7 +84,7 @@ const Categories = () => {
             </div>
             <h2 className="text-xl font-medium title-font text-gray-900 mt-5">Sweaters</h2>
             <p className="text-base leading-relaxed mt-2">Stay warm and stylish with our collection of cozy sweaters. Perfect for colder days.</p>
-            <Link href="/sweaters" legacyBehavior><a className="text-yellow-500 inline-flex items-center mt-3" >Shop Now
+            <Link href="/categories/sweaters" legacyBehavior><a className="text-yellow-500 inline-flex items-center mt-3" >Shop Now
               <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
@@ -95,7 +96,7 @@ const Categories = () => {
             </div>
             <h2 className="text-xl font-medium title-font text-gray-900 mt-5">T-Shirts</h2>
             <p className="text-base leading-relaxed mt-2">Essential and versatile t-shirts for every look. Comfortable and fashionable for everyday wear.</p>
-            <Link href="/tshirts" legacyBehavior><a className="text-yellow-500 inline-flex items-center mt-3" >Shop Now
+            <Link href="/categories/tshirts" legacyBehavior><a className="text-yellow-500 inline-flex items-center mt-3" >Shop Now
               <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
