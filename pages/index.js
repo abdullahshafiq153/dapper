@@ -1,4 +1,5 @@
 import Hero from "@/components/hero";
+import Newsletter from "@/components/newsletter";
 import Link from "next/link";
 
 export default function Home() {
@@ -90,6 +91,7 @@ export default function Home() {
             </div>
         </div>
       </section>
+      <Newsletter/>
     </div>
   );
 }

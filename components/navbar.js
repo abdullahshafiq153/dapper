@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { FiMenu, FiX } from "react-icons/fi";
 import Link from "next/link";
+import { IoMdCloseCircle } from "react-icons/io";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const [cartOpen, setcartOpen] = useState(false);
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
+  const toggleCart = () => {
+    setcartOpen(!cartOpen);
+  };
   return (
     <>
       <header className="text-gray-600 body-font">
@@ -62,9 +65,72 @@ const Navbar = () => {
               placeholder="Search"
               className="flex-grow text-base text-gray-700 bg-gray-100 border border-gray-300 rounded py-2 px-4 mr-3 focus:outline-none focus:border-gray-500"
             />
-            <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base">
+
+            <button
+              onClick={toggleCart}
+              className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base"
+            >
               <IoCartOutline className="text-3xl" />
             </button>
+            {cartOpen?
+            <div className="cart absolute top-36 right-15 bg-gray-100 p-5 rounded shadow-lg w-fit h-auto">
+              <IoMdCloseCircle
+                onClick={toggleCart}
+                className="text-red-600 text-lg cursor-pointer absolute m-0 p-0 right-2 top-2"
+              />
+
+              <div className="title&btn flex justify-between">
+                <h3>Shopping Cart</h3>
+              </div>
+
+              <div className="items mt-2 flex">
+                <div className=" w-full flex">
+                  <a className="block relative  w-16 md:w-20 rounded overflow-hidden">
+                    <img
+                      alt="ecommerce"
+                      className="object-cover object-center w-full h-full block"
+                      src="https://outfitters.com.pk/cdn/shop/files/F0278107505M_2.jpg?v=1701232289"
+                    />
+                  </a>
+                  <div className="px-3 md:px-8 mt-4">
+                    <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
+                      HOODIES
+                    </h3>
+                    <h2 className="text-gray-900 title-font text-sm font-medium">
+                      Solid Zipper Hoodie
+                    </h2>
+                    <p className="mt-1 text-sm">$26.40</p>
+                  </div>
+                </div>
+                <div className="quantity flex items-center space-x-2">
+                  <div className="cursor-pointer relative flex items-center justify-center h-5 w-5 md:h-8 md:w-8">
+                    <span className="absolute inset-0 bg-green-500 rounded-full"></span>
+                    <p className="relative text-white font-extrabold text-lg md:text-xl">
+                      +
+                    </p>
+                  </div>
+                  <span className="text-gray-900 text-lg md:text-xl">0</span>
+                  <div className="cursor-pointer relative flex items-center justify-center h-5 w-5 md:h-8 md:w-8">
+                    <span className="absolute inset-0 bg-red-500 rounded-full"></span>
+                    <p className="relative text-white font-extrabold text-lg md:text-xl">
+                      -
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button className="mt-5 underline text-red-700 text-sm md:text-base">
+                Remove all
+              </button>
+              <hr className="mt-5 " />
+              <div className="total justify-end flex space-x-14">
+                <div className="flex-col">
+                  <h3 className="text-sm md:text-base">Sub-Total</h3>
+                  <p className="text-xs md:text-sm ">x items</p>
+                </div>
+                <div className="text-lg md:text-3xl">$0</div>
+              </div>
+            </div>
+            :""}
           </div>
         </div>
       </header>
