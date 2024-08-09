@@ -32,7 +32,12 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.svg" />
       </Head>
-      <header className="text-gray-600 body-font">
+      <header
+        style={{
+          backgroundColor: `rgb(var(--background-start-rgb))`,
+        }}
+        className="text-gray-600 sticky top-0 bg-body-font"
+      >
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
           <div className="flex items-center justify-between w-full md:w-auto mb-4 md:mb-0">
             <div className="flex items-center">
@@ -102,7 +107,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
               <div className="title&btn flex justify-between">
                 <h3 className="font-bold">Shopping Cart</h3>
               </div>
-              {Object.keys(cart).length ===0 && <div>Your Cart is empty.</div>}
+              {Object.keys(cart).length === 0 && <div>Your Cart is empty.</div>}
               {Object.keys(cart).map((k) => {
                 return (
                   <div key={k} className="items mt-2 flex">
@@ -116,16 +121,28 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
                       </a>
                       <div className="px-3 md:px-8 mt-4">
                         <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                        {cart[k].variant}
+                          {cart[k].variant}
                         </h3>
                         <h2 className="text-gray-900 title-font text-sm font-medium">
-                        {cart[k].name}
+                          {cart[k].name}
                         </h2>
                         <p className="mt-1 text-sm">{cart[k].price}</p>
                       </div>
                     </div>
                     <div className="quantity flex items-center space-x-2">
-                      <div onClick={()=>{addToCart(k,1,cart[k].price,cart[k].name,cart[k].size,cart[k].variant)}} className="cursor-pointer relative flex items-center justify-center h-5 w-5 md:h-8 md:w-8">
+                      <div
+                        onClick={() => {
+                          addToCart(
+                            k,
+                            1,
+                            cart[k].price,
+                            cart[k].name,
+                            cart[k].size,
+                            cart[k].variant
+                          );
+                        }}
+                        className="cursor-pointer relative flex items-center justify-center h-5 w-5 md:h-8 md:w-8"
+                      >
                         <span className="absolute inset-0 bg-green-500 rounded-full"></span>
                         <p className="select-none relative text-white font-extrabold text-lg md:text-xl">
                           +
@@ -134,7 +151,19 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
                       <span className="text-gray-900 text-lg md:text-xl">
                         {cart[k].qty}
                       </span>
-                      <div onClick={()=>{removeFromCart(k,1,cart[k].price,cart[k].name,cart[k].size,cart[k].variant)}} className="cursor-pointer relative flex items-center justify-center h-5 w-5 md:h-8 md:w-8">
+                      <div
+                        onClick={() => {
+                          removeFromCart(
+                            k,
+                            1,
+                            cart[k].price,
+                            cart[k].name,
+                            cart[k].size,
+                            cart[k].variant
+                          );
+                        }}
+                        className="cursor-pointer relative flex items-center justify-center h-5 w-5 md:h-8 md:w-8"
+                      >
                         <span className="absolute inset-0 bg-red-500 rounded-full"></span>
                         <p className="select-none relative text-white font-extrabold text-lg md:text-xl">
                           -
