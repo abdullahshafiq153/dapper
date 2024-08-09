@@ -5,26 +5,25 @@ import Link from "next/link";
 import { IoMdCloseCircle } from "react-icons/io";
 import Head from "next/head";
 
-const Navbar = ({cart,addToCart,removeFromCart,clearCart,subTotal}) => {
-  console.log(cart,addToCart,removeFromCart,clearCart,subTotal)
+const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
+  //console.log(cart,addToCart,removeFromCart,clearCart,subTotal)
   const [menuOpen, setMenuOpen] = useState(false);
- const ref =useRef()
+  const ref = useRef();
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
   const toggleCart = () => {
-    if (ref.current.classList.contains('translate-x-full')){
-      ref.current.classList.remove('translate-x-full')
-      ref.current.classList.add('translate-x-0')
-    }
-    else if (!ref.current.classList.contains('translate-x-full')){
-      ref.current.classList.add('translate-x-full')
-      ref.current.classList.remove('translate-x-0')
+    if (ref.current.classList.contains("translate-x-full")) {
+      ref.current.classList.remove("translate-x-full");
+      ref.current.classList.add("translate-x-0");
+    } else if (!ref.current.classList.contains("translate-x-full")) {
+      ref.current.classList.add("translate-x-full");
+      ref.current.classList.remove("translate-x-0");
     }
   };
   return (
     <>
-    <Head>
+      <Head>
         <title>Dapper - Modern Men's Fashion</title>
         <meta
           name="description"
@@ -91,7 +90,10 @@ const Navbar = ({cart,addToCart,removeFromCart,clearCart,subTotal}) => {
               <IoCartOutline className="text-3xl" />
             </button>
             {/* //                                          top-36 right-15 */}
-            <div ref={ref} className="cart absolute z-50 top-5 right-5 bg-gray-100 p-5 rounded shadow-lg w-fit h-auto transform transition-transform translate-x-full">
+            <div
+              ref={ref}
+              className="cart absolute z-50 top-5 right-5 bg-gray-100 p-5 rounded shadow-lg w-fit h-auto transform transition-transform translate-x-full"
+            >
               <IoMdCloseCircle
                 onClick={toggleCart}
                 className="text-red-600 text-lg cursor-pointer absolute m-0 p-0 right-2 top-2"
@@ -100,43 +102,53 @@ const Navbar = ({cart,addToCart,removeFromCart,clearCart,subTotal}) => {
               <div className="title&btn flex justify-between">
                 <h3 className="font-bold">Shopping Cart</h3>
               </div>
+              {Object.keys(cart).length ===0 && <div>Your Cart is empty.</div>}
+              {Object.keys(cart).map((k) => {
+                return (
+                  <div key={k} className="items mt-2 flex">
+                    <div className=" w-full flex">
+                      <a className="block relative  w-16 md:w-20 rounded overflow-hidden">
+                        <img
+                          alt="ecommerce"
+                          className="object-cover object-center w-full h-full block"
+                          src="https://outfitters.com.pk/cdn/shop/files/F0278107505M_2.jpg?v=1701232289"
+                        />
+                      </a>
+                      <div className="px-3 md:px-8 mt-4">
+                        <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
+                        {cart[k].variant}
+                        </h3>
+                        <h2 className="text-gray-900 title-font text-sm font-medium">
+                        {cart[k].name}
+                        </h2>
+                        <p className="mt-1 text-sm">{cart[k].price}</p>
+                      </div>
+                    </div>
+                    <div className="quantity flex items-center space-x-2">
+                      <div onClick={()=>{addToCart(k,1,cart[k].price,cart[k].name,cart[k].size,cart[k].variant)}} className="cursor-pointer relative flex items-center justify-center h-5 w-5 md:h-8 md:w-8">
+                        <span className="absolute inset-0 bg-green-500 rounded-full"></span>
+                        <p className="select-none relative text-white font-extrabold text-lg md:text-xl">
+                          +
+                        </p>
+                      </div>
+                      <span className="text-gray-900 text-lg md:text-xl">
+                        {cart[k].qty}
+                      </span>
+                      <div onClick={()=>{removeFromCart(k,1,cart[k].price,cart[k].name,cart[k].size,cart[k].variant)}} className="cursor-pointer relative flex items-center justify-center h-5 w-5 md:h-8 md:w-8">
+                        <span className="absolute inset-0 bg-red-500 rounded-full"></span>
+                        <p className="select-none relative text-white font-extrabold text-lg md:text-xl">
+                          -
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
 
-              <div className="items mt-2 flex">
-                <div className=" w-full flex">
-                  <a className="block relative  w-16 md:w-20 rounded overflow-hidden">
-                    <img
-                      alt="ecommerce"
-                      className="object-cover object-center w-full h-full block"
-                      src="https://outfitters.com.pk/cdn/shop/files/F0278107505M_2.jpg?v=1701232289"
-                    />
-                  </a>
-                  <div className="px-3 md:px-8 mt-4">
-                    <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                      HOODIES
-                    </h3>
-                    <h2 className="text-gray-900 title-font text-sm font-medium">
-                      Solid Zipper Hoodie
-                    </h2>
-                    <p className="mt-1 text-sm">$26.40</p>
-                  </div>
-                </div>
-                <div className="quantity flex items-center space-x-2">
-                  <div className="cursor-pointer relative flex items-center justify-center h-5 w-5 md:h-8 md:w-8">
-                    <span className="absolute inset-0 bg-green-500 rounded-full"></span>
-                    <p className="relative text-white font-extrabold text-lg md:text-xl">
-                      +
-                    </p>
-                  </div>
-                  <span className="text-gray-900 text-lg md:text-xl">0</span>
-                  <div className="cursor-pointer relative flex items-center justify-center h-5 w-5 md:h-8 md:w-8">
-                    <span className="absolute inset-0 bg-red-500 rounded-full"></span>
-                    <p className="relative text-white font-extrabold text-lg md:text-xl">
-                      -
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <button className="mt-5 underline text-red-700 text-sm md:text-base">
+              <button
+                onClick={clearCart}
+                className="mt-5 underline text-red-700 text-sm md:text-base"
+              >
                 Remove all
               </button>
               <hr className="mt-5 " />
@@ -144,7 +156,7 @@ const Navbar = ({cart,addToCart,removeFromCart,clearCart,subTotal}) => {
                 <div className="flex-col">
                   <h3 className="text-sm md:text-base">Sub-Total</h3>
                 </div>
-                <div className="text-lg md:text-xl">$0</div>
+                <div className="text-lg md:text-xl">{cart.subTotal}</div>
               </div>
               <div className="delivery justify-between flex space-x-14">
                 <div className="flex-col">
@@ -159,11 +171,12 @@ const Navbar = ({cart,addToCart,removeFromCart,clearCart,subTotal}) => {
                 </div>
                 <div className="text-lg md:text-2xl">$0</div>
               </div>
-              <Link href="/checkout"><button className="mt-5 inline-flex w-full text-white justify-center bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-base sm:text-lg md:text-lg">
-              Checkout
-            </button></Link>
+              <Link href="/checkout">
+                <button className="mt-5 inline-flex w-full text-white justify-center bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-base sm:text-lg md:text-lg">
+                  Checkout
+                </button>
+              </Link>
             </div>
-            
           </div>
         </div>
       </header>

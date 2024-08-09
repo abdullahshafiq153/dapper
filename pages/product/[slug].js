@@ -1,6 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-const Slug = () => {
+const Slug = ({ addToCart }) => {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -124,12 +124,12 @@ const Slug = () => {
               <span className="title-font font-medium text-2xl text-gray-900">
                 $58.00
               </span>
-              <button className="flex ml-auto text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded">
+              <button
+                onClick={()=>{addToCart("slug", 1, 20, "name", "size", "variant")}}
+                className="flex ml-auto text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded"
+              >
                 ADD TO CART
               </button>
-            </div>
-            <div className="pin  ">]
-
             </div>
           </div>
         </div>
