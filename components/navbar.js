@@ -1,20 +1,38 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { FiMenu, FiX } from "react-icons/fi";
 import Link from "next/link";
 import { IoMdCloseCircle } from "react-icons/io";
+import Head from "next/head";
 
-const Navbar = () => {
+const Navbar = ({cart,addToCart,removeFromCart,clearCart,subTotal}) => {
+  console.log(cart,addToCart,removeFromCart,clearCart,subTotal)
   const [menuOpen, setMenuOpen] = useState(false);
-  const [cartOpen, setcartOpen] = useState(false);
+ const ref =useRef()
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
   const toggleCart = () => {
-    setcartOpen(!cartOpen);
+    if (ref.current.classList.contains('translate-x-full')){
+      ref.current.classList.remove('translate-x-full')
+      ref.current.classList.add('translate-x-0')
+    }
+    else if (!ref.current.classList.contains('translate-x-full')){
+      ref.current.classList.add('translate-x-full')
+      ref.current.classList.remove('translate-x-0')
+    }
   };
   return (
     <>
+    <Head>
+        <title>Dapper - Modern Men's Fashion</title>
+        <meta
+          name="description"
+          content="Dapper is your go-to store for modern men's fashion. Explore our collection of stylish clothing."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/logo.svg" />
+      </Head>
       <header className="text-gray-600 body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
           <div className="flex items-center justify-between w-full md:w-auto mb-4 md:mb-0">
@@ -72,15 +90,15 @@ const Navbar = () => {
             >
               <IoCartOutline className="text-3xl" />
             </button>
-            {cartOpen?
-            <div className="cart absolute top-36 right-15 bg-gray-100 p-5 rounded shadow-lg w-fit h-auto">
+            {/* //                                          top-36 right-15 */}
+            <div ref={ref} className="cart absolute z-50 top-5 right-5 bg-gray-100 p-5 rounded shadow-lg w-fit h-auto transform transition-transform translate-x-full">
               <IoMdCloseCircle
                 onClick={toggleCart}
                 className="text-red-600 text-lg cursor-pointer absolute m-0 p-0 right-2 top-2"
               />
 
               <div className="title&btn flex justify-between">
-                <h3>Shopping Cart</h3>
+                <h3 className="font-bold">Shopping Cart</h3>
               </div>
 
               <div className="items mt-2 flex">
@@ -122,15 +140,30 @@ const Navbar = () => {
                 Remove all
               </button>
               <hr className="mt-5 " />
-              <div className="total justify-end flex space-x-14">
+              <div className="subtotal justify-between flex space-x-14">
                 <div className="flex-col">
                   <h3 className="text-sm md:text-base">Sub-Total</h3>
-                  <p className="text-xs md:text-sm ">x items</p>
                 </div>
-                <div className="text-lg md:text-3xl">$0</div>
+                <div className="text-lg md:text-xl">$0</div>
               </div>
+              <div className="delivery justify-between flex space-x-14">
+                <div className="flex-col">
+                  <h3 className="text-sm md:text-base">Delivery Charges</h3>
+                </div>
+                <div className="text-lg md:text-xl">$0</div>
+              </div>
+              <hr className=" " />
+              <div className="total mt-2 justify-between flex space-x-14">
+                <div className="flex-col">
+                  <h3 className="text-lg md:text-2xl">Total</h3>
+                </div>
+                <div className="text-lg md:text-2xl">$0</div>
+              </div>
+              <Link href="/checkout"><button className="mt-5 inline-flex w-full text-white justify-center bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-base sm:text-lg md:text-lg">
+              Checkout
+            </button></Link>
             </div>
-            :""}
+            
           </div>
         </div>
       </header>

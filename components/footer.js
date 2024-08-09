@@ -87,7 +87,7 @@ const Footer = () => {
               <svg
                 fill="currentColor"
                 strokeLinecap="round"
-                strokelinejoin="round"
+                strokeLinejoin="round"
                 strokeWidth="2"
                 className="w-5 h-5"
                 viewBox="0 0 24 24"
@@ -99,7 +99,7 @@ const Footer = () => {
               <svg
                 fill="currentColor"
                 strokeLinecap="round"
-                strokelinejoin="round"
+                strokeLinejoin="round"
                 strokeWidth="2"
                 className="w-5 h-5"
                 viewBox="0 0 24 24"
@@ -112,7 +112,7 @@ const Footer = () => {
                 fill="none"
                 stroke="currentColor"
                 strokeLinecap="round"
-                strokelinejoin="round"
+                strokeLinejoin="round"
                 strokeWidth="2"
                 className="w-5 h-5"
                 viewBox="0 0 24 24"

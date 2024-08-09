@@ -8,8 +8,8 @@ const Hoodies = () => {
     <section className="text-gray-600 body-font">
       <div className="container px-5 pt-5 py-24 mx-auto">
         <div className="flex flex-wrap -m-4">
-          <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-            <a className="block relative h-65 rounded overflow-hidden">
+        <Link href="/product/test" legacyBehavior><div className="cursor-pointer lg:w-1/4 md:w-1/2 p-4 w-full">
+             <a className="block relative h-65 rounded overflow-hidden">
               <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://outfitters.com.pk/cdn/shop/files/F0420107901_1.jpg?v=1703661513" />
             </a>
             <div className="mt-4">
@@ -17,7 +17,7 @@ const Hoodies = () => {
               <h2 className="text-gray-900 title-font text-lg font-medium">Colour Block Track Zipper Hoodie</h2>
               <p className="mt-1">$28.00</p>
             </div>
-          </div>
+          </div></Link>
           <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
             <a className="block relative h-65 rounded overflow-hidden">
               <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://outfitters.com.pk/cdn/shop/files/F0080125725_2.jpg?v=1701926668" />
@@ -91,7 +91,9 @@ const Hoodies = () => {
         </div>
       </div>
     </section>
+    
     <Newsletter/>
+    <hr className="m-5 " />
     </>
   );
 }

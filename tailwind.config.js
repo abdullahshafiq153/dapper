@@ -15,5 +15,9 @@ module.exports = {
       },
     },
   },
-  plugins: [ require('flowbite/plugin')],
+  plugins: [ require('flowbite/plugin'),function({ addBase }) {
+    addBase({
+      'body': { overflowX: 'hidden' },
+    })
+  }],
 };
