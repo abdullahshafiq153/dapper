@@ -36,7 +36,8 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
         style={{
           backgroundColor: `rgb(var(--background-start-rgb))`,
         }}
-        className="text-gray-600 sticky top-0 bg-body-font"
+        className="text-gray-600  bg-body-font"
+        //sticky top-0
       >
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-between">
           <div className="flex items-center justify-between w-full md:w-auto mb-4 md:mb-0">
@@ -185,7 +186,7 @@ const Navbar = ({ cart, addToCart, removeFromCart, clearCart, subTotal }) => {
                 <div className="flex-col">
                   <h3 className="text-sm md:text-base">Sub-Total</h3>
                 </div>
-                <div className="text-lg md:text-xl">{cart.subTotal}</div>
+                <div className="text-lg md:text-xl">${subTotal}</div>
               </div>
               <div className="delivery justify-between flex space-x-14">
                 <div className="flex-col">

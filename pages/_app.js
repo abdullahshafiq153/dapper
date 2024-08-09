@@ -26,6 +26,8 @@ export default function App({ Component, pageProps }) {
     for (let i = 0; i < keys.length; i++) {
       subt += myCart[keys[i]].price * myCart[keys[i]].qty;
     }
+    // console.log("_app subtotal"+subt);
+    // console.log(typeof(subt))
     setSubTotal(subt);
   };
 
