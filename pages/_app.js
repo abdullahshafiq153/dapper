@@ -59,6 +59,11 @@ export default function App({ Component, pageProps }) {
     setCart(myCart);
     saveCart(myCart);
   };
+  const [cartVisible, setCartVisible] = useState(false);
+
+  const tCart = () => {
+    setCartVisible(!cartVisible);
+  };
   return (
     <>
       <Navbar
@@ -67,6 +72,7 @@ export default function App({ Component, pageProps }) {
         removeFromCart={removeFromCart}
         clearCart={clearCart}
         subTotal={subTotal}
+        tCart={tCart}
       />
       <Component
         cart={cart}
@@ -74,6 +80,7 @@ export default function App({ Component, pageProps }) {
         removeFromCart={removeFromCart}
         clearCart={clearCart}
         subTotal={subTotal}
+        tCart={tCart}
         {...pageProps}
       />
       ;

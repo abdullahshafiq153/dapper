@@ -38,37 +38,37 @@ const Footer = () => {
               CATEGORIES
             </h2>
             <nav className="list-none mb-10">
-              <Link href="/hoodies" legacyBehavior>
+              <Link href="/categories/hoodies" legacyBehavior>
                 <li>
                   <a className="cursor-pointer text-gray-400 hover:text-gray-900">Hoodies</a>
                 </li>
               </Link>
-              <Link href="/jackets" legacyBehavior>
+              <Link href="/categories/jackets" legacyBehavior>
                 <li>
                   <a className="cursor-pointer text-gray-400 hover:text-gray-900">Jackets</a>
                 </li>
               </Link>
-              <Link href="/jeans" legacyBehavior>
+              <Link href="/categories/jeans" legacyBehavior>
                 <li>
                   <a className="cursor-pointer text-gray-400 hover:text-gray-900">Jeans</a>
                 </li>
               </Link>
-              <Link href="/pants" legacyBehavior>
+              <Link href="/categories/pants" legacyBehavior>
                 <li>
                   <a className="cursor-pointer text-gray-400 hover:text-gray-900">Pants</a>
                 </li>
               </Link>
-              <Link href="/shorts" legacyBehavior>
+              <Link href="/categories/shorts" legacyBehavior>
                 <li>
                   <a className="cursor-pointer text-gray-400 hover:text-gray-900">Shorts</a>
                 </li>
               </Link>
-              <Link href="/sweaters" legacyBehavior>
+              <Link href="/categories/sweaters" legacyBehavior>
                 <li>
                   <a className="cursor-pointer text-gray-400 hover:text-gray-900">Sweaters</a>
                 </li>
               </Link>
-              <Link href="/t-shirts" legacyBehavior>
+              <Link href="/categories/t-shirts" legacyBehavior>
                 <li>
                   <a className="cursor-pointer text-gray-400 hover:text-gray-900">T-Shirts</a>
                 </li>
